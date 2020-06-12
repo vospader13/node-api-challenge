@@ -39,15 +39,18 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
-
+    to build RESTful web services and to work with JSON
 - [ ] Describe Middleware?
-
+    Build in middleware like what is included in express
+    Third party middleware that are npm modules we can install and import into the app using require
+    custom middleware that is self written
+    middleware is like the glue that connects components together and allows us to manage data
 - [ ] Describe a Resource?
-
+    a RESTful Api is the resource. its an object with a type. 
 - [ ] What can the API return to help clients know if a request was successful?
-
+    A HTTP Response status code
 - [ ] How can we partition our application into sub-applications?
-
+    By using routers for organization. 
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
