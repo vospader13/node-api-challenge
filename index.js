@@ -12,3 +12,33 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+
+const express = require("express")
+const actionRouter = require("./data/Routers/actionRouter");
+const projectRouter = require('./data/Routers/projectRouter');
+const logger =  require("./data/middleware/logger");
+
+const server = express();
+const port = process.env.PORT || 3001; 
+
+
+server.use(express.json());
+server.use(logger({format: "long"}))
+
+
+server.use("/api/projects", projectRouter);
+server.use("/api/projects/:id/actions", actionRouter);
+
+
+server.use((err, req, res, next) => {
+    console.log(err)
+    res.status(500).json({
+        message: "ERROR ERROR"
+    })
+})
+
+
+server.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`)
+});
